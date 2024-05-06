@@ -48,4 +48,10 @@ updateProvider(provider:provider){
   this.router.navigate(['updateProvider',provider.id])
 }
 
+addArticle(provider:provider){
+
+  this.router.navigate(['addArticle',provider.id])
+}
+
+
 }

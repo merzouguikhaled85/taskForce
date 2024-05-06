@@ -4,6 +4,8 @@ import { ListProvidersComponent } from './list-providers/list-providers.componen
 import { AddProviderComponent } from './add-provider/add-provider.component';
 import { ContactComponent } from './contact/contact.component';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
+import { ListArticlesComponent } from './list-articles/list-articles.component';
+import { AddArticleComponent } from './add-article/add-article.component';
 
 const routes: Routes = [
 
@@ -11,6 +13,8 @@ const routes: Routes = [
   {path:"addProvider",component:AddProviderComponent},
   {path:"contact",component:ContactComponent},
   {path:"updateProvider/:id",component:UpdateProviderComponent},
+  {path:"listeArticles",component:ListArticlesComponent},
+  {path:"addArticle/:id",component:AddArticleComponent},
 
 ];
 

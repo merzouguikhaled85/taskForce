@@ -12,3 +12,30 @@ export interface provider {
   address: string;
   email: string;
 }
+
+
+export interface articleOut {
+  id?: number;
+  label: string;
+  price: string;
+  picture: string;
+  provider:provider
+}
+
+
+export interface articleIn {
+  id?: number;
+  label: string;
+  price: string;
+  picture: string;
+
+}
+
+export interface article {
+  id?: number;
+  label: string;
+  price: string;
+  picture: string;
+  provider?:provider
+}
+

@@ -1,0 +1,21 @@
+<h2 align="center" style="color: blue;">Add a new article</h2>
+
+
+
+
+<form #articleform="ngForm" (ngSubmit)="addArticle(articleform.value)">
+  <div class="form-group">
+    <label for="label">label</label>
+    <input ngModel name="label" type="text" class="form-control" id="label" aria-describedby="emailHelp" #name="ngModel" placeholder="Label">
+  </div>
+  <div class="form-group">
+    <label for="price">price</label>
+    <input ngModel name="price" type="text" class="form-control" id="price" aria-describedby="emailHelp" #address="ngModel" placeholder="price">
+  </div>
+  <div class="form-group">
+    <label for="email">picture</label>
+    <input ngModel name="picture" type="text" class="form-control" id="picture" aria-describedby="emailHelp" #email="ngModel" placeholder="picture">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

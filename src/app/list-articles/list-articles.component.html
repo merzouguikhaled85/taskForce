@@ -1,0 +1,27 @@
+<h2 align="center" style="color:brown">List of Articles</h2>
+<!-- <button style="margin-right:20px;"  type="button" class="btn btn-primary">Ajouter</button> -->
+<hr>
+<table align="center" class=" table table-bordered table-hover table-success">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Label</th>
+        <th>price</th>
+        <th>Picture</th>
+        <th>Provider</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of listArticles">
+        <td>{{ article.id}}</td>
+        <td>{{ article.label}}</td>
+        <td>{{ article.price |  currency }}</td>
+        <td>{{ article.picture }}</td>
+        <td>
+            {{ article.provider?.name }}
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>

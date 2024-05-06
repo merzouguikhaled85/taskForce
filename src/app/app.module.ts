@@ -14,6 +14,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddProviderComponent } from './add-provider/add-provider.component';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
 import { ContactComponent } from './contact/contact.component';
+import { ListArticlesComponent } from './list-articles/list-articles.component';
+import { AddArticleComponent } from './add-article/add-article.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ContactComponent } from './contact/contact.component';
     NavbarComponent,
     AddProviderComponent,
     UpdateProviderComponent,
-    ContactComponent
+    ContactComponent,
+    ListArticlesComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule,
