@@ -1,0 +1,28 @@
+<h2 align="center" style="color: blue;">Contact us</h2>
+
+
+
+
+<form #contactform="ngForm" (ngSubmit)="displayData(contactform.value)">
+  <div class="form-group">
+    <label for="nom">Name</label>
+    <input ngModel name="nom" type="text" class="form-control" id="nom" aria-describedby="emailHelp"  placeholder="Nom">
+  </div>
+  <div class="form-group">
+    <label for="prenom">prenom</label>
+    <input ngModel name="prenom" type="text" class="form-control" id="prenom" aria-describedby="emailHelp"  placeholder="prenom">
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input ngModel name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp"  placeholder="email">
+  </div>
+  <div class="form-group">
+    <textarea ngModel id="message" name="message" rows="4" cols="50" placeholder="saisir votre message">
+        
+    </textarea>
+  </div>
+ 
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

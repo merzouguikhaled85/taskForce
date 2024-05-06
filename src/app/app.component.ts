@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'taskforce';
+  nom:string="HMPIT"
+  names1:string []=["amine","khaled","KHALI"]
+  names!:string []
+
+
+
+  display(){
+    alert("Hello angular")
+
+  
+  }
 }

@@ -1,0 +1,29 @@
+<h2 align="center" style="color:brown">List of Providers</h2>
+
+<button style="margin-right:20px;"  type="button" class="btn btn-primary">Ajouter</button>
+<hr>
+<table align="center" class=" table table-bordered table-hover table-success">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Adresse</th>
+        <th>Email</th>
+        <th>Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let provider of listProviders">
+        <td>{{ provider.id}}</td>
+        <td>{{ provider.name }}</td>
+        <td>{{ provider.address }}</td>
+        <td>{{ provider.email }}</td>
+        <td>
+            <button style="margin-right: 10px;" type="button" class="btn btn-warning"(click)="updateProvider(provider)">Modifier</button>
+            <button type="button" class="btn btn-danger" (click)="deleteProvider(provider)">Supprimer</button>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,44 @@
+<H2>Liste des médecins</H2>
+<ol>
+  <li *ngFor="let medecin of medecins">{{ medecin | drpipe }}</li>
+</ol>
+
+<hr />
+
+<!-- <table>
+    <tr>
+      <th>nom</th>
+     
+    </tr>
+    
+    <tr *ngFor="let medecin of medecins">
+      <td>{{ medecin | drpipe }}</td>
+     
+    </tr>
+  </table> -->
+
+<table align="center" class=" table table-bordered table-hover table-info">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Age</th>
+      <th>Grade</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let medecin of medecinsDetails">
+      <td>{{ medecin.nom }}</td>
+      <td>{{ medecin.prenom }}</td>
+      <td>{{ medecin.age }}</td>
+      <td>{{ medecin.grade }}</td>
+      <td> <img [src]="medecin.photo" width="70px" height="70px"></td>
+      <td><button type="button" class="btn btn-primary">Détails</button></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+Taper votre nom: {{formation}} <input  type="text" class="form-control" [(ngModel)]="formation">

@@ -3,14 +3,36 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DrpipePipe } from './drpipe.pipe';
+import { MedecinComponent } from './medecin/medecin.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { ListPostComponent } from './list-post/list-post.component';
+import { ListProvidersComponent } from './list-providers/list-providers.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AddProviderComponent } from './add-provider/add-provider.component';
+import { UpdateProviderComponent } from './update-provider/update-provider.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DrpipePipe,
+    MedecinComponent,
+    ListUsersComponent,
+    ListPostComponent,
+    ListProvidersComponent,
+    NavbarComponent,
+    AddProviderComponent,
+    UpdateProviderComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
