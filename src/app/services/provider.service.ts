@@ -10,36 +10,36 @@ export class ProviderService {
 
   constructor(private http:HttpClient) { }
 
-     token:any=sessionStorage.getItem('jwtToken');
+   
 
 
 
   getProviders(){
-    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
-    return this.http.get<provider[]>(environment.baseUrl+"/providers", {headers});
+    
+    return this.http.get<provider[]>(environment.baseUrl+"/providers");
   }
 
   getProviderById(id:number){
-    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
-    return this.http.get<provider>(environment.baseUrl+"/providers/"+id, {headers});
+   
+    return this.http.get<provider>(environment.baseUrl+"/providers/"+id);
   }
 
 
   addProvider(provider:provider){
-    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
-    return this.http.post<provider>(environment.baseUrl+"/providers",provider, {headers});
+    
+    return this.http.post<provider>(environment.baseUrl+"/providers",provider);
   }
 
 
   deleteProvider(provider:provider){
-    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
-    return this.http.delete(environment.baseUrl+"/providers/"+provider.id, {headers});
+    
+    return this.http.delete(environment.baseUrl+"/providers/"+provider.id);
 
   }
   
   updateProvider(provider:provider){
-    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
-    return this.http.put<provider>(environment.baseUrl+"/providers/"+provider.id,provider, {headers});
+    
+    return this.http.put<provider>(environment.baseUrl+"/providers/"+provider.id,provider);
   }
 
 }
