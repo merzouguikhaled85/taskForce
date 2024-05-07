@@ -1,26 +1,49 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   private isLocaleStorageAvailable=typeof sessionStorage!=='undefined'
  
 
-  authenticate(username:string, password:string) {
-    if (username === "amine" && password === "1234") {
-      if (this.isLocaleStorageAvailable)
-        {
-          sessionStorage.setItem('username', username)
-        }
+  // authenticate(username:string, password:string) {
+  //   if (username === "amine" && password === "1234") {
+  //     if (this.isLocaleStorageAvailable)
+  //       {
+  //         sessionStorage.setItem('username', username)
+  //       }
       
-      return true;
-    } else {
-      return false;
-    }
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+
+  authenticate(username: any, password: any) {
+
+    let userData:any = this.httpClient.post('http://ams.smart-it-partner.com:7006/api/auth/signin',
+    {"username":username,"password":password}).pipe(
+      map(
+        (data:any) => {
+          if (this.isLocaleStorageAvailable)
+            {
+              sessionStorage.setItem('jwtToken', data.accessToken);
+              sessionStorage.setItem('username', data.username);
+              userData = data;
+              console.log(data);
+            }
+
+
+        }
+      )
+    );
+    return userData;
   }
 
 

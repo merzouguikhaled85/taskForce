@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 
@@ -13,8 +13,10 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
     this.authenticationService.logOut();
+    
     this.router.navigate(['login']);
   }
 
+  
 }
 

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { provider } from '../models';
 import { environment } from '../../environments/environment.development';
@@ -10,31 +10,36 @@ export class ProviderService {
 
   constructor(private http:HttpClient) { }
 
-
+     token:any=sessionStorage.getItem('jwtToken');
 
 
 
   getProviders(){
-    return this.http.get<provider[]>(environment.baseUrl+"/providers");
+    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
+    return this.http.get<provider[]>(environment.baseUrl+"/providers", {headers});
   }
 
   getProviderById(id:number){
-    return this.http.get<provider>(environment.baseUrl+"/providers/"+id);
+    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
+    return this.http.get<provider>(environment.baseUrl+"/providers/"+id, {headers});
   }
 
 
   addProvider(provider:provider){
-    return this.http.post<provider>(environment.baseUrl+"/providers",provider);
+    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
+    return this.http.post<provider>(environment.baseUrl+"/providers",provider, {headers});
   }
 
 
   deleteProvider(provider:provider){
-    return this.http.delete(environment.baseUrl+"/providers/"+provider.id);
+    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
+    return this.http.delete(environment.baseUrl+"/providers/"+provider.id, {headers});
 
   }
   
   updateProvider(provider:provider){
-    return this.http.put<provider>(environment.baseUrl+"/providers/"+provider.id,provider);
+    const headers= new HttpHeaders({Authorization:'Bearer '+this.token});
+    return this.http.put<provider>(environment.baseUrl+"/providers/"+provider.id,provider, {headers});
   }
 
 }

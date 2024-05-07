@@ -21,13 +21,31 @@ constructor(private router: Router,private loginservice: AuthenticationService){
   ngOnInit(): void {
     
   }
-  checkLogin() { 
-    if (this.loginservice.authenticate(this.username, this.password)) {
-    this.router.navigate([''])
-  } else
-    this.invalidLogin = true
+
+
+//   checkLogin() { 
+//     if (this.loginservice.authenticate(this.username, this.password)) {
+//     this.router.navigate([''])
+//   } else
+//     this.invalidLogin = true
+// }
+
+
+checkLogin() {
+
+  this.loginservice.authenticate(this.username, this.password).subscribe(
+    (data:any) => {
+      this.router.navigate([''])
+      this.invalidLogin = false
+      console.log(data)
+    },
+    (error:any) => {
+      this.invalidLogin = true
+      console.log(error)
+    }
+  );
+
+
+
 }
-
-
-
 }
