@@ -66,6 +66,7 @@ export class AuthenticationService {
   logOut() {
 
     if (this.isLocaleStorageAvailable)
+      sessionStorage.removeItem('jwtToken')
     sessionStorage.removeItem('username')
   }
 
