@@ -7,19 +7,29 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="listeProviders" routerLinkActive>List providers</a>
+            <a class="nav-link " aria-current="page" routerLink="listeProviders" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">List providers</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link"routerLink="addProvider" routerLinkActive>Add Provider</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"routerLink="listeArticles" routerLinkActive>List Articles</a>
+            <a class="nav-link"routerLink="addProvider"  *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Add Provider</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link"routerLink="contact" routerLinkActive>Contact Us</a>
+            <a class="nav-link"routerLink="listeArticles"*ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">List Articles</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link"routerLink="login" *ngIf="!loginService.isUserLoggedIn()" routerLinkActive="active">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"routerLink="contact" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Contact Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"routerLink="logout" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">logout</a>
+          </li>
+          
           
           
 

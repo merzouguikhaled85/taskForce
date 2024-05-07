@@ -16,6 +16,8 @@ import { UpdateProviderComponent } from './update-provider/update-provider.compo
 import { ContactComponent } from './contact/contact.component';
 import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { AddArticleComponent } from './add-article/add-article.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AddArticleComponent } from './add-article/add-article.component';
     UpdateProviderComponent,
     ContactComponent,
     ListArticlesComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

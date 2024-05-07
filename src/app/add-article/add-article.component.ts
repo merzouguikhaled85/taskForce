@@ -14,7 +14,11 @@ export class AddArticleComponent implements OnInit{
   price!:string;
   picture!:string;
   constructor(private activatedRoute:ActivatedRoute,private articleService :ArticleService,private router:Router){}
+
+  
   ngOnInit(): void {
+
+
     // Getting route parameters
     this.activatedRoute.params.subscribe(params => {
       this.idProvider = params['id']; //
@@ -26,7 +30,7 @@ export class AddArticleComponent implements OnInit{
 
   
 
-  // Add a new provider
+  // Add a new article
   addArticle(articleForm:any ){
     let article={
       label:articleForm.label,
