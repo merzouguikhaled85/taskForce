@@ -1,7 +1,7 @@
 <h2 align="center" style="color: blue;">Contact us</h2>
 
 
-<app-apropos [campany]="ourCampany"></app-apropos>
+<app-apropos (eventToSend)="processEvent($event)"  [campany]="ourCampany"></app-apropos>
 
 
 <app-message-contact [message]="messageParent"></app-message-contact>
