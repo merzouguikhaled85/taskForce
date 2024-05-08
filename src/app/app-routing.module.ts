@@ -22,6 +22,10 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent },
   {path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'register', component: RegisterComponent},
+  {
+    path: 'dashbaordAdmin',
+    loadChildren: () => import('./dashboard-admin/dashboard-admin.module').then(m => m.DashboardAdminModule)
+  }
 
   
 
