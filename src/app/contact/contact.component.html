@@ -4,6 +4,6 @@
 <app-apropos (eventToSend)="processEvent($event)"  [campany]="ourCampany"></app-apropos>
 
 
-<app-message-contact [message]="messageParent"></app-message-contact>
+<app-message-contact (displayDateTime)="processEvent2($event)" [message]="messageParent"></app-message-contact>
 
 

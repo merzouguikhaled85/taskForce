@@ -7,7 +7,8 @@ import { json } from 'stream/consumers';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-processEvent(message: any) {
+
+  processEvent(message: any) {
 
  
 
@@ -15,6 +16,16 @@ processEvent(message: any) {
   
 
 }
+
+processEvent2(message: any) {
+
+ 
+
+  alert("dade du jour: " + message);
+
+
+}
+
   ourCampany:string="smart IT Partner"
   messageParent:string="Tous les champs sont obligatoires"
 
