@@ -8,6 +8,7 @@ import { json } from 'stream/consumers';
 })
 export class ContactComponent {
   ourCampany:string="smart IT Partner"
+  messageParent:string="Tous les champs sont obligatoires"
 
   
 

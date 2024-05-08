@@ -9,7 +9,7 @@ export class AproposComponent implements OnInit {
   
 
 @Input() campany:string="";
-  email:string="Email : info@smart-it-partner.com";
+email:string="Email : info@smart-it-partner.com";
 phone:string="98 787521";
  adresse:string="Technopole Elghazela Ariana"
  ngOnInit(): void {
