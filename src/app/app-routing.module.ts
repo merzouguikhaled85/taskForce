@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: "", pathMatch: "full", redirectTo:"app-navbar" },
   {path:"listeProviders",component:ListProvidersComponent,canActivate:[AuthGaurdService]},
   {path:"addProvider",component:AddProviderComponent,canActivate:[AuthGaurdService]},
-  {path:"contact",component:ContactComponent,canActivate:[AuthGaurdService]},
+  {path:"contact",component:ContactComponent},
   {path:"updateProvider/:id",component:UpdateProviderComponent,canActivate:[AuthGaurdService]},
   {path:"listeArticles",component:ListArticlesComponent,canActivate:[AuthGaurdService]},
   {path:"addArticle/:id",component:AddArticleComponent,canActivate:[AuthGaurdService]},

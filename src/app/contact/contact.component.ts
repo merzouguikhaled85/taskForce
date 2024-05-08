@@ -7,11 +7,8 @@ import { json } from 'stream/consumers';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
+  ourCampany:string="smart IT Partner"
 
-  displayData(contactform:any){
-    console.log(contactform)
-
-    alert(contactform.nom+" "+contactform.prenom+" "+contactform.email+" "+contactform.message)
-  }
+  
 
 }

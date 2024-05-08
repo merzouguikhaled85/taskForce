@@ -19,6 +19,8 @@ import { AddArticleComponent } from './add-article/add-article.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AproposComponent } from './apropos/apropos.component';
+import { MessageContactComponent } from './message-contact/message-contact.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     ListArticlesComponent,
     AddArticleComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    AproposComponent,
+    MessageContactComponent
   ],
   imports: [
     BrowserModule,

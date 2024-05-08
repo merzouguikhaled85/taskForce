@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class AuthenticationService {
 
   authenticate(username: any, password: any) {
 
-    let userData:any = this.httpClient.post('http://ams.smart-it-partner.com:7006/api/auth/signin',
+    let userData:any = this.httpClient.post(environment.baseUrl+"/api/auth/signin",
     {"username":username,"password":password}).pipe(
       map(
         (data:any) => {
